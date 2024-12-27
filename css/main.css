@@ -6,9 +6,7 @@ body {
 	margin: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+
 div, p, input, button, form, span, a, ul, li {
 	box-sizing: border-box;
 }
