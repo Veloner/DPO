@@ -1,0 +1,639 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	color: #000000;
+	font-size: 15px;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+div, p, input, button, form, span, a, ul, li {
+	box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6{
+	margin: 0;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 1000;
+}
+
+h2 {
+    transition: color 1s ease;
+}
+
+p {
+	line-height: 1.65em;
+}
+/* Фиолетовый блок наверху */
+/* Top-bar */
+.top-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #7c5bff;
+    color: white;
+    z-index: 1000;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.top-bar .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar a {
+    scroll-behavior: smooth;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #f1c40f;
+}
+
+/* Секции */
+.section {
+	margin: 0;
+    
+    
+}
+
+
+.header {
+    position: relative; /* Для управления псевдоэлементами */
+    padding: 100px 0;
+    background: rgb(44, 39, 48);
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    bottom: 0px; /* Опустить треугольник ниже header */
+    left: 50%; /* Центровать треугольник */
+    transform: translateX(-50%); /* Для точного выравнивания */
+    width: 0;
+    height: 0;
+    border-left: 600px solid transparent; /* Половина ширины фиолетового блока */
+    border-right: 600px solid transparent; /* Половина ширины фиолетового блока */
+    border-bottom: 160px solid #7C5BFF; /* Цвет и высота треугольника */
+    z-index: 2; /* Убедитесь, что треугольник отображается выше фона needs */
+}
+
+
+
+
+.container {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.wrapper-inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+
+
+
+.offer {
+	width: 512px;
+	color: white;
+	animation-name: offer-slide;
+	animation-duration: 1.2s;
+	animation-timing-function: cubic-bezier();
+}
+
+.offer__title {
+	font-size: 64px;
+	margin-bottom: 1px;
+	transition: color 0.5s ease;
+}
+
+.offer__span {
+	margin-bottom: 1px;
+	font-size: 64px;
+	font-weight: 700;
+	font-family: 'Ubuntu', sans-serif;
+	margin-bottom: 30px;
+	color: #7C5BFF;
+}
+
+.offer__text {
+	margin-top: -10px;
+	margin-bottom: -20px;
+	font-size: 24px;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 700;
+	width: 100%;
+}
+.offer__text2 {
+	font-size: 12px;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 50;
+	width: 100%;
+	opacity: 70%;
+}
+
+.img1 {
+	opacity: 0;
+	width: 512px;
+	animation-name: guitarist-img;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+
+
+.btn {
+	margin-top: 40px;
+	display: block;
+	width: 500px;
+	height: 50px;
+	background-color: #bb6ef6;
+	color: rgb(255, 255, 255);
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	transition: all 0.3s;
+}
+
+.btn:hover {
+	background-color: #7C5BFF;;
+}
+
+
+
+
+
+
+
+
+.needs_head{
+	font-size: 48px;
+	font-weight: 700;
+	font-family: 'Ubuntu', sans-serif;
+	margin-top: 20px;
+	margin-bottom: -30px;
+	color: #000000;
+}
+.needs {
+	padding: 50px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.needs_text {
+	text-align: center;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 26px;
+
+}
+
+.needs__background {
+    background-color: #7C5BFF; /* Цвет фона */
+    padding: 20px 0; /* Отступы внутри блока */
+    margin-top: -50px; /* Для перекрытия пространства до header */
+    position: relative;
+    z-index: 1; /* Для правильного слоя */
+}
+.needs__title {
+    text-align: center;
+    color: white; /* Цвет текста */
+    font-size: 48px;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* Расстояние между блоками */
+	
+}
+
+.h2 {
+	margin: 40px 0 40px 0;
+}
+
+
+
+
+
+.musician {
+	padding: 100px 0;
+}
+
+.musician__title {
+    text-align: center;
+    color: white; /* Цвет текста */
+    font-size: 48px;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+.musician__background {
+    background-color: #7C5BFF; /* Цвет фона */
+    padding: 20px 0; /* Отступы внутри блока */
+    margin-top: -50px; /* Для перекрытия пространства до header */
+    position: relative;
+    z-index: 1; /* Для правильного слоя */
+}
+.musician_block {
+	margin-top: 100px;
+	width: 280px;
+	line-height: 30px;
+	display: flex;
+	text-align: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+.comments {
+	padding: 100px 0;
+}
+
+.comments__title {
+    text-align: center;
+    color: white; /* Цвет текста */
+    font-size: 48px;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+.comments__background {
+    background-color: #7C5BFF; /* Цвет фона */
+    padding: 20px 0; /* Отступы внутри блока */
+    margin-top: -50px; /* Для перекрытия пространства до header */
+    position: relative;
+    z-index: 1; /* Для правильного слоя */
+}
+.comments_text {
+	text-align: center;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 16px;
+
+}
+.comments_block {
+	margin-top: 100px;
+	width: 280px;
+	line-height: 30px;
+	display: flex;
+	text-align: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+.uslugi {
+	padding: 100px 0;
+}
+
+.uslugi__title {
+    text-align: center;
+    color: white; /* Цвет текста */
+    font-size: 48px;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+.uslugi__background {
+    background-color: #7C5BFF; /* Цвет фона */
+    padding: 20px 0; /* Отступы внутри блока */
+    margin-top: -50px; /* Для перекрытия пространства до header */
+    position: relative;
+    z-index: 1; /* Для правильного слоя */
+}
+.uslugi_text {
+	text-align: center;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 16px;
+
+}
+.uslugi_block {
+	margin-top: 100px;
+	width: 280px;
+	line-height: 30px;
+	display: flex;
+	text-align: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+
+.FAQ_head{
+	font-size: 48px;
+	font-weight: 700;
+	font-family: 'Ubuntu', sans-serif;
+	margin-top: 20px;
+	margin-bottom: -30px;
+	color: #000000;
+}
+.FAQ {
+	padding: 50px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.FAQ_text1 {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 24px;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.FAQ_text2 {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 24px;
+	text-align: right;
+	text-shadow: 2px 2px 4px rgba(51, 49, 49, 0.5);
+}
+.create-line {
+	width: 1200px;
+	border-top: 3px solid #7C5BFF;
+  }
+.FAQ__background {
+    background-color: #7C5BFF; /* Цвет фона */
+    padding: 20px 0; /* Отступы внутри блока */
+    margin-top: -50px; /* Для перекрытия пространства до header */
+    position: relative;
+    z-index: 1; /* Для правильного слоя */
+}
+.FAQ__title {
+    text-align: center;
+    color: white; /* Цвет текста */
+    font-size: 48px;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+
+
+.FAQ_block {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0px; /* Расстояние между блоками */
+	
+}
+
+
+
+.contacts {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.contacts__container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contacts__title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #805af5;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.contacts__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.contacts__map {
+    flex: 1 1 45%;
+    border: 3px solid #805af5;
+}
+
+.contacts__info {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-item img {
+    width: 48px;
+    height: 48px;
+}
+
+.contact-item p {
+    font-size: 18px;
+    margin: 0;
+    color: #333;
+}
+
+
+
+/* Общий контейнер */
+.order-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2c2730;
+    min-height: 100vh;
+}
+
+/* Внешняя рамка */
+.order-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c2730;
+    border: 5px solid white;
+    padding: 20px;
+    max-width: 1200px;
+    width: 90%;
+}
+
+/* Текстовая часть */
+.order-text {
+    flex: 1;
+    color: white;
+    margin-right: 20px;
+}
+
+.order-text h1 {
+    font-size: 64px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.order-text span {
+    color: #7c5bff;
+    font-weight: bold;
+}
+
+/* Формы справа */
+.order-forms {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Обёртка для каждой формы */
+.form-wrapper {
+    background-color: white;
+    border: 5px solid #7c5bff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Формы */
+.order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.order-form input {
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 3px;
+    outline: none;
+}
+
+.order-form input:focus {
+    border-color: #7c5bff;
+}
+
+.order-form .btn {
+    background-color: #7c5bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.order-form .btn:hover {
+    background-color: #6a4ae0;
+}
+
+
+
+
+
+
+.text {
+	margin-bottom: 20px;
+	height: 40px;
+	padding: 0 20px;
+}
+
+hr {
+	margin: 0;
+}
+
+
+.output {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    color: #333;
+}
+
+.footer {
+	padding: 80px 0;
+	top: 0;
+	height: 50%;
+	background: rgb(44, 39, 48);
+}
+
+.copyright {
+	color: white;
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+}
+
+
+@keyframes offer-slide {
+	from {
+		opacity: 0;
+		transform: translateX(-200px);
+	}
+	to {
+		opacity: 100%;
+		transform: translateX(0);
+	}
+}
+
+@keyframes guitarist-img {
+	from {
+		opacity: 0;
+		transform: scale(0.2);
+	}
+	to {
+		opacity: 100%;
+		transform: scale(1);
+	}
+}
+
+@media screen and (max-width: 1200px)
+{
+	.container {
+		width: 90%;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.block {
+		width: 100%;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+}
+
+@media screen and (max-width: 768px)
+{
+	.container {
+		width: 90%;
+	}
+}
+@media screen and (max-width: 768px) {
+    .header::after {
+        border-left: 45%; /* Процентное значение для адаптивности */
+        border-right: 45%;
+    }
+}
+
