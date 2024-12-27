@@ -1,6 +1,6 @@
 // Проверка имени пользователя
-function checkFirstname() {
-    var firstname = document.getElementById("register-firstname").value.trim();
+function checkFirstname(input) {
+    var firstname = input.value.trim();
     var regex = /^[а-яА-Яa-zA-Z\s]{2,15}$/;
 
     if (!regex.test(firstname)) {
@@ -11,8 +11,8 @@ function checkFirstname() {
 }
 
 // Проверка E-mail
-function checkEmail() {
-    var email = document.getElementById("register-email").value.trim();
+function checkEmail(input) {
+    var email = input.value.trim();
     var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!regex.test(email)) {
@@ -23,8 +23,8 @@ function checkEmail() {
 }
 
 // Проверка пароля
-function checkPassword() {
-    var password = document.getElementById("register-password").value.trim();
+function checkPassword(input) {
+    var password = input.value.trim();
     if (password.length < 6) {
         alert("Пароль должен быть длиной не менее 6 символов");
         return false;
@@ -33,8 +33,8 @@ function checkPassword() {
 }
 
 // Проверка телефона
-function checkPhone() {
-    var phone = document.getElementById("order-phone").value.trim();
+function checkPhone(input) {
+    var phone = input.value.trim();
     var regex = /^\+?\d{10,15}$/;
 
     if (!regex.test(phone)) {
@@ -48,16 +48,32 @@ function checkPhone() {
 function validateForm(event) {
     event.preventDefault(); // Останавливаем стандартное поведение формы
 
-    // Запуск проверок
-    var isFirstnameValid = checkFirstname();
-    var isEmailValid = checkEmail();
-    var isPasswordValid = checkPassword();
-    var isPhoneValid = checkPhone();
+    var form = event.target; // Текущая форма
+    var isValid = true;
 
-    // Если все проверки прошли успешно
-    if (isFirstnameValid && isEmailValid && isPasswordValid && isPhoneValid) {
+    // Перебираем все элементы формы
+    form.querySelectorAll("input").forEach(input => {
+        switch (input.id) {
+            case "register-firstname":
+            case "order-name":
+                isValid = checkFirstname(input) && isValid;
+                break;
+            case "register-email":
+            case "order-email":
+                isValid = checkEmail(input) && isValid;
+                break;
+            case "register-password":
+                isValid = checkPassword(input) && isValid;
+                break;
+            case "order-phone":
+                isValid = checkPhone(input) && isValid;
+                break;
+        }
+    });
+
+    if (isValid) {
         alert("Данные успешно отправлены!");
-        event.target.submit(); // Отправить форму, если всё корректно
+        form.submit(); // Отправить форму, если всё корректно
     } else {
         alert("Пожалуйста, исправьте ошибки перед отправкой формы.");
     }
